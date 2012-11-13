@@ -1,0 +1,26 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require columnal/columnal
+ *= require jqueryui/jquery-ui-1.8.24.custom.redmond
+ *= require muse/style
+ *= require muse/config
+ *= require muse/global
+ *= require superfish/superfish
+ *= require formvalidator/validationEngine.jquery
+ *= require cleditor/jquery.cleditor
+ *= require fullcalendar/fullcalendar
+ *= require fullcalendar/fullcalendar.print
+ *= require colorbox/colorbox
+ *= require colorpicker/colorpicker
+ *= require plupload/plupload
+ *= require_self
+ *= require_tree .
+ */

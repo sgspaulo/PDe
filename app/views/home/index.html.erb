@@ -1,0 +1,79 @@
+<div class="row clearfix">
+	<div class="col_12">
+		<div class="widget clearfix">
+			<h2>Avisos ao usuário</h2>
+			<div class="widget_inside">
+				<h3 class="margin_bottom_15">Modelos de mensagens</h3>
+				<span class="notification warning">
+					Você tem lançamentos em aberto há mais de 2 horas. <a href="#">Verifique!</a>
+				</span>
+			</div>
+		</div>   
+	</div>
+</div>
+
+<div class="row clearfix">
+	<div class="col_8">
+		<div class="widget clearfix">
+			<h2>Últimos lançamentos</h2>
+			<div class="widget_inside">
+				<%= render "mockup_table_wide" %>
+				<%= render "mockup_table_mobile" %>
+			</div>
+		</div>   
+	</div>
+	<div class="col_4 last">
+		<div class="widget clearfix">
+			<h2>Informações</h2>
+			<div class="widget_inside">
+				<p><strong>Data</strong> : Quinta, 18 de Outubro de 2012</p>
+				<p><strong>Horário</strong> : 15:12 h</p>
+				<p><strong>Fuso Horário</strong> : (GMT-04:00) America/Campo_Grande</p>
+				<p><strong>IP nº</strong> : 10.77.0.22</p>
+				<ul class="disc">
+					<li><strong>Usuário</strong>
+						<ul>Perfil : ADMIN</ul>
+						<ul>Login : vlamir.carbonari</ul>
+						<ul>Nome Completo : VLAMIR CARBONARI</ul>
+						<ul>Nome Guerra : CARBONARI</ul>
+						<ul>Matrícula : 1370561</ul>
+					</li>
+				</ul>
+			</div>
+		</div>   
+	</div>
+</div>
+
+<div class="row clearfix">
+	<div class="col_12 last">
+		<div class="widget clearfix">
+			<h2>Imagens das últimas 24 horas</h2>
+			<script>
+			$(document).ready(function(){
+				$(".group1").colorbox({rel:'group1', transition:"fade"});
+			});
+			</script>
+			<div class="col_12 widget_inside">
+				<ul class="gallery medium">
+					<% 
+						imagens = [ 
+							{ :arquivo => '/fotos/01.jpg', :legenda => "Operação Carnaval 2010. Fiscalização da PRF na BR-163" },
+							{ :arquivo => '/fotos/02.jpg', :legenda => "Apreensão de haxixe no Posto PRF Capey" },
+							{ :arquivo => '/fotos/03.jpg', :legenda => "Apreensão de cocaína em fundo falso, no Posto PRF Capey" },
+							{ :arquivo => '/fotos/04.jpg', :legenda => "PRF recupera Hilux roubada" },
+							{ :arquivo => '/fotos/05.jpg', :legenda => "Boliviano que viajava no ônibus da Andorinha, de Corumbá para Campo Grande, preso com 4 Kg de cocaína colada ao corpo" }
+						]
+					%>
+					<% imagens.each do |i| %>
+						<li>
+							<%= link_to( image_tag(i[:arquivo]), i[:arquivo], { :class => "group1", :title => i[:legenda] } ) %>
+						</li>
+					<% end %>
+				</ul>
+				<div class="col_12 widget_inside">
+					<h4><%= link_to( 'Ver mais imagens', :controller => :home, :action => :imagens ) %></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

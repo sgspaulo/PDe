@@ -1,0 +1,56 @@
+<select class="mobile-only row clearfix" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+	<option value="#">Parte Diária</option>
+	<option value="#">Consultas</option>
+	<option value="#">Tabelas</option>
+	<option value="#">Relatórios</option>
+</select>
+
+<ul class="sf-menu mobile-hide row clearfix" style="clear: none;">
+	<li class="active iconed" style="margin-left: 10px;">
+		<a href="<%= root_path %>"><span><%= image_tag "header/icon_dashboard.png" %> Painel</span></a>
+	</li>
+	<li class=""><a href="#"><span>Parte Diária</span></a>
+		<ul>
+			<li><a href="<%= url_for :controller => :home, :action => :abertura %>"><span>Abertura</span></a></li>
+			<li><a href="<%= url_for :controller => :home, :action => :lancamentos %>"><span>Lançamentos</span></a></li>
+			<li><a href="<%= url_for :controller => :home, :action => :imagens %>"><span>Imagens</span></a></li>
+			<li><a href="<%= url_for :controller => :home, :action => :fechamento %>"><span>Fechamento</span></a></li>
+		</ul>
+	</li>
+	<li class=""><a href="#"><span>Consultas</span></a>
+		<ul>
+			<li><a href="#"><span>Consulta Partes Diárias</span></a></li>
+			<li><a href="#"><span>Consulta Abordagens Suspeitas</span></a></li>
+			<li><%= link_to( 'Galeria de Imagens', :controller => :home, :action => :galeria ) %></li>
+		</ul>
+	</li>
+	<li class=""><a href="#"><span>Tabelas</span></a>
+		<ul>
+			<li><a href="#"><span>Artigos</span></a></li>
+			<li><a href="#"><span>BR's</span></a></li>
+			<li><a href="#"><span>Infrações</span></a></li>
+			<li><a href="#"><span>Municípios</span></a></li>
+			<li><a href="#"><span>Modelos de Narrativas</span></a></li>
+			<li><a href="#"><span>Policiais</span></a></li>
+			<li><a href="#"><span>Postos</span></a></li>
+			<li><a href="#"><span>ROD / Itens</span></a></li>
+			<li><a href="#"><span>Unidades</span></a></li>
+			<li><a href="#"><span>Usuários</span></a></li>
+		</ul>
+	</li>
+	<li class=""><a href="#"><span>Relatórios</span></a></li>
+</ul>
+
+<script> 
+$(document).ready(function(){ 
+	$("ul.sf-menu").supersubs({ 
+		minWidth:    18,
+		maxWidth:    27,
+		extraWidth:  1
+	}).superfish({ 
+		animation: {height:'show'},
+		speed: 'fast',
+		delay:     800               // 1.2 second delay on mouseout 
+	}); 
+}); 
+</script>

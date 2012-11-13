@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title>3ª SRPRF/MS - .: PDe :.</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="apple-touch-con" href="" />
+
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	<%= stylesheet_link_tag    "application", :media => "screen" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+
+</head>
+<body>
+	
+	<div id="wrap">
+		<div id="main">
+			<header class="container">
+				<%= render "shared/top" %>
+			</header>
+
+			<nav class="container">
+				<%= render "shared/mockup_menu" %>
+			</nav>
+
+			<div id="titlediv">
+				<%= render "shared/breadcrumb" %>
+			</div>
+
+			<div class="container test" id="actualbody">
+				<%= yield %>
+			</div>
+
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col_12">
+					<span class="left">&copy; 3ª SRPRF/MS - SPF</span>
+					<span class="right">Suporte: (67) 9828-0912 (vivo) / 8423-3224 (oi) / 8115-7385 (tim)</span>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

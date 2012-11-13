@@ -1,0 +1,33 @@
+<div class="row clearfix">
+	<div class="col_12 last">
+		<div class="widget clearfix">
+			<h2>Galeria de Imagens</h2>
+			<script>
+			$(document).ready(function(){
+				$(".group1").colorbox({rel:'group1', transition:"fade"});
+			});
+			</script>
+			<div class="col_12 widget_inside">
+				<ul class="gallery medium">
+					<% 
+						imagens = [ 
+							{ :arquivo => '/fotos/01.jpg', :legenda => "Operação Carnaval 2010. Fiscalização da PRF na BR-163" },
+							{ :arquivo => '/fotos/02.jpg', :legenda => "Apreensão de haxixe no Posto PRF Capey" },
+							{ :arquivo => '/fotos/03.jpg', :legenda => "Apreensão de cocaína em fundo falso, no Posto PRF Capey" },
+							{ :arquivo => '/fotos/04.jpg', :legenda => "PRF recupera Hilux roubada" },
+							{ :arquivo => '/fotos/05.jpg', :legenda => "Boliviano que viajava no ônibus da Andorinha, de Corumbá para Campo Grande, preso com 4 Kg de cocaína colada ao corpo" },
+							{ :arquivo => '/fotos/06.jpg', :legenda => "Lobo guará estava ferido e sangrando as margens da BR-463" },
+							{ :arquivo => '/fotos/07.jpg', :legenda => "Uma onça também foi socorrida pelos policiais federais" },
+							{ :arquivo => '/fotos/08.jpg', :legenda => "Apreensão de dois veículos com drogas e fuzis, que seriam levados para SP" }
+						]
+					%>
+					<% imagens.each do |i| %>
+						<li>
+							<%= link_to( image_tag(i[:arquivo]), i[:arquivo], { :class => "group1", :title => i[:legenda] } ) %>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
